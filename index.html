@@ -1,105 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Sebedits Portfolio</title>
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
-
-  body {
-    margin: 0;
-    font-family: 'Poppins', sans-serif;
-    background: #0d6efd;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    align-items: center;
-    justify-content: center;
-    padding: 2rem;
-  }
-
-  .container {
-    background: #171c28;
-    max-width: 400px;
-    width: 100%;
-    border-radius: 15px;
-    padding: 2rem;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-    text-align: center;
-  }
-
-  .profile-pic {
-    width: 130px;
-    height: 130px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 4px solid #0d6efd;
-    margin-bottom: 1rem;
-  }
-
-  h1 {
-    margin: 0.5rem 0;
-    font-weight: 600;
-  }
-
-  .tabs {
-    text-align: center;
-    margin-bottom: 1rem;
-  }
-
-  .tabs button {
-    margin: 0 5px;
-    padding: 10px 15px;
-    background: white;
-    color: #0d6efd;
-    border: none;
-border-radius: 5px;
-    font-weight: bold;
-    cursor: pointer;
-  }
-
-  .images-section {
-    display: none;
-  }
-
-  .images-section.active {
-    display: block;
-  }
-
-  .images-section img {
-    width: 100%;
-    max-width: 300px;
-    margin: 10px 0;
-    border-radius: 10px;
-  }
-
-  .contact-btn {
-    background: #25d366;
-    color: white;
-    border: none;
-    padding: 1rem 2rem;
-    border-radius: 50px;
-    font-size: 1.1rem;
-    font-weight: 600;
-    cursor: pointer;
-    text-decoration: none;
-    display: inline-block;
-    box-shadow: 0 5px 15px rgba(37, 211, 102, 0.4);
-    transition: background 0.3s ease;
-  }
-
-  .contact-btn:hover {
-    background: #1ebe57;
-  }
-
-  footer {
-    margin-top: auto;
-    color: #94a3b8;
-    font-size: 0.9rem;
-    padding: 1rem 0 0;
-  }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sebedits</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: #0d6efd;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+    .container {
+      background: #171c28;
+      max-width: 400px;
+      width: 100%;
+      border-radius: 15px;
+      padding: 2rem;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+      text-align: center;
+    }
+    .profile-pic {
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid #0d6efd;
+      margin-bottom: 1rem;
+    }
+    h1 {
+      margin: 0.5rem 0;
+font-weight: 600;
+    }
+    p.bio {
+      font-size: 1rem;
+      margin: 0.5rem 0 2rem 0;
+      color: #cbd5e1;
+    }
+    .skills {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+    .skill {
+      background: #0d6efd;
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      cursor: default;
+      user-select: none;
+    }
+    .contact-btn {
+      background: #25d366;
+      color: white;
+      border: none;
+      padding: 1rem 2rem;
+      border-radius: 50px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      box-shadow: 0 5px 15px rgba(37, 211, 102, 0.4);
+      transition: background 0.3s ease;
+    }
+    .contact-btn:hover {
+      background: #1ebe57;
+    }
+    .tabs {
+      margin: 2rem 0 1rem;
+    }
+    .tabs .skill {
+      cursor: pointer;
+    }
+    .images-section {
+      display: none;
+    }
+    .images-section.active {
+      display: block;
+    }
+    .images-section img {
+      width: 100%;
+      max-width: 300px;
+      margin: 10px 0;
+      border-radius: 10px;
+    }
+    footer {
+      margin-top: auto;
+      color: #94a3b8;
+      font-size: 0.9rem;
+      padding: 1rem 0 0;
 </style>
 </head>
 <body>
@@ -107,6 +106,7 @@ border-radius: 5px;
 <div class="container">
   <img src="https://raw.githubusercontent.com/seb-creator01/Sebedits/main/fotor-ai-20250725151423.jpg" alt="Profile Picture" class="profile-pic" />
   <h1>Sebedits</h1>
+  <p class="bio">Creative graphic designer & web developer. Turning ideas into visual stories with passion and skill.</p>
 
   <div class="tabs">
     <button class="toggle-btn" data-target="photoshop">Photoshop</button>
@@ -115,27 +115,27 @@ border-radius: 5px;
   </div>
 
   <div id="photoshop" class="images-section">
-<img src="https://raw.githubusercontent.com/seb-creator01/Sebedits/refs/heads/main/Polish_20251114_140742304.jpg" alt="Photoshop 1" />
-    <img src="https://raw.githubusercontent.com/seb-creator01/Sebedits/refs/heads/main/Polish_20251114_140409899.jpg" alt="Photoshop 2" />
-    <img src="https://raw.githubusercontent.com/seb-creator01/Sebedits/refs/heads/main/Polish_20251114_135409330.png" alt="Photoshop 3" />
-    <img src="https://raw.githubusercontent.com/seb-creator01/Sebedits/refs/heads/main/Polish_20251114_123407199.png" alt="Photoshop 4" />
+    <img src="https://raw.githubusercontent.com/seb-creator01/Sebedits/refs/heads/main/Polish_20251114_140742304.jpg" />
+    <img src="https://raw.githubusercontent.com/seb-creator01/Sebedits/refs/heads/main/Polish_20251114_140409899.jpg" />
+    <img src="https://raw.githubusercontent.com/seb-creator01/Sebedits/refs/heads/main/Polish_20251114_135409330.png" />
+    <img src="https://raw.githubusercontent.com/seb-creator01/Sebedits/refs/heads/main/Polish_20251114_123407199.png" />
   </div>
 
   <div id="graphic" class="images-section">
-    <img src="https://raw.githubusercontent.com/seb-creator01/Sebedits/refs/heads/main/Polish_20250801_141804654.png" alt="Graphic Design 1" />
-    <img src="https://raw.githubusercontent.com/seb-creator01/Sebedits/refs/heads/main/Screenshot_20251114-151329_Canva.jpg" alt="Graphic Design 2" />
-    <img src="https://raw.githubusercontent.com/seb-creator01/Sebedits/refs/heads/main/Screenshot_20251114-151126_Canva.jpg" alt="Graphic Design 3" />
-    <img src="https://raw.githubusercontent.com/seb-creator01/Sebedits/refs/heads/main/Screenshot_20251114-150736_Canva.jpg" alt="Graphic Design 4" />
+    <img src="https://raw.githubusercontent.com/seb-creator01/Sebedits/refs/heads/main/Polish_20250801_141804654.png" />
+<img src="https://raw.githubusercontent.com/seb-creator01/Sebedits/refs/heads/main/Screenshot_20251114-151329_Canva.jpg" />
+    <img src="https://raw.githubusercontent.com/seb-creator01/Sebedits/refs/heads/main/Screenshot_20251114-151126_Canva.jpg" />
+    <img src="https://raw.githubusercontent.com/seb-creator01/Sebedits/refs/heads/main/Screenshot_20251114-150736_Canva.jpg" />
   </div>
 
   <div id="logo" class="images-section">
-<img src="https://raw.githubusercontent.com/seb-creator01/Sebedits/refs/heads/main/Polish_20251114_144243975.jpg" alt="Logo Design 1" />
-    <img src="https://raw.githubusercontent.com/seb-creator01/Sebedits/refs/heads/main/Polish_20251114_144328737.jpg" alt="Logo Design 2" />
-    <img src="https://raw.githubusercontent.com/seb-creator01/Sebedits/refs/heads/main/Polish_20251114_144411281.jpg" alt="Logo Design 3" />
-    <img src="https://raw.githubusercontent.com/seb-creator01/Sebedits/refs/heads/main/Polish_20251114_144510666.jpg" alt="Logo Design 4" />
+    <img src="https://raw.githubusercontent.com/seb-creator01/Sebedits/refs/heads/main/Polish_20251114_144243975.jpg" />
+    <img src="https://raw.githubusercontent.com/seb-creator01/Sebedits/refs/heads/main/Polish_20251114_144328737.jpg" />
+    <img src="https://raw.githubusercontent.com/seb-creator01/Sebedits/refs/heads/main/Polish_20251114_144411281.jpg" />
+    <img src="https://raw.githubusercontent.com/seb-creator01/Sebedits/refs/heads/main/Polish_20251114_144510666.jpg" />
   </div>
 
-  <a href="https://wa.me/message/O2QERB7C5VE6E1" target="_blank" rel="noopener" class="contact-btn">Chat on WhatsApp</a>
+  <a href="https://wa.me/message/O2QERB7C5VE6E1" target="_blank" class="contact-btn">Chat on WhatsApp</a>
 </div>
 
 <footer>© 2025 Sebedits. All rights reserved.</footer>
@@ -145,21 +145,15 @@ border-radius: 5px;
   const sections = document.querySelectorAll('.images-section');
 
   buttons.forEach(btn => {
-    btn.addEventListener('click', () => {
+btn.addEventListener('click', () => {
       const target = btn.getAttribute('data-target');
       sections.forEach(section => {
-        if(section.id === target) {
-          section.classList.add('active');
-        } else {
-          section.classList.remove('active');
-        }
+        section.classList.remove('active');
       });
+      document.getElementById(target).classList.add('active');
     });
   });
-
-  // Show the first section by default on page load
-document.getElementById('photoshop').classList.add('active');
 </script>
 
 </body>
-    </html>
+</html>
