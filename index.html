@@ -1,155 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Sebedits Portfolio</title>
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
-
-  body {
-    margin: 0;
-    font-family: 'Poppins', sans-serif;
-    background: #0d6efd;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    align-items: center;
-    justify-content: flex-start;
-    padding: 2rem;
-  }
-  .container {
-    background: #171c28;
-    max-width: 400px;
-    width: 100%;
-    border-radius: 15px;
-    padding: 2rem;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-    text-align: center;
-  }
-  .profile-pic {
-    width: 130px;
-    height: 130px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 4px solid #0d6efd;
-    margin-bottom: 1rem;
-  }
-  h1 {
-    margin: 0.5rem 0;
-    font-weight: 600;
-  }
-  p.bio {
-    font-size: 1rem;
-    margin: 0.5rem 0 1.5rem 0;
-    color: #cbd5e1;
-  }
-  .skills {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin-bottom: 20px;
-  }
-.skill-btn {
-    padding: 8px 15px;
-    border: none;
-    border-radius: 20px;
-    background-color: #0d6efd;
-    color: white;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  .skill-btn:hover {
-    background-color: #084cd3;
-  }
-  .gallery img {
-    max-width: 100%;
-    max-height: 200px;
-    margin: 10px auto;
-    border-radius: 10px;
-    display: block;
-  }
-  .contact-btn {
-    background: #25d366;
-    color: white;
-    border: none;
-    padding: 1rem 2rem;
-    border-radius: 50px;
-    font-size: 1.1rem;
-    font-weight: 600;
-    cursor: pointer;
-    text-decoration: none;
-    display: inline-block;
-    box-shadow: 0 5px 15px rgba(37, 211, 102, 0.4);
-    transition: background 0.3s ease;
-    margin-top: 1.5rem;
-  }
-  .contact-btn:hover {
-    background: #1ebe57;
-  }
-  footer {
-    margin-top: auto;
-    color: #94a3b8;
-    font-size: 0.9rem;
-    padding: 1rem 0 0;
-  }
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sebedits Portfolio</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #0d6efd;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem;
+    }
+    .container {
+      background: #171c28;
+      padding: 2rem;
+      border-radius: 10px;
+      max-width: 600px;
+      width: 100%;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    }
+    h1 {
+      text-align: center;
+    }
+    .skills {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+    .skill {
+      background: #0d6efd;
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      cursor: pointer;
+    }
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+      margin-top: 1rem;
+    }
+    .gallery img {
+      width: 120px;
+      height: 120px;
+object-fit: cover;
+      border-radius: 8px;
+    }
+    .contact-btn {
+      display: block;
+      background: #25d366;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      border-radius: 30px;
+      text-decoration: none;
+      margin-top: 2rem;
+      font-weight: bold;
+    }
+  </style>
 </head>
 <body>
   <div class="container">
-    <img src="https://i.imgur.com/R5wN0Wf.jpg" alt="Sebedits Profile" class="profile-pic" />
     <h1>Sebedits</h1>
-    <p class="bio">Creative graphic designer & web developer. Turning ideas into visual stories with passion and skill.</p>
-
     <div class="skills">
-"https://raw.githubusercontent.com/seb-creator01/Sebedits/refs/heads/main/Screenshot_20251114-151126_Canva.jpg",
-      "https://raw.githubusercontent.com/seb-creator01/Sebedits/refs/heads/main/Screenshot_20251114-150736_Canva.jpg"
-    ],
-    logo: [
-      "https://raw.githubusercontent.com/seb-creator01/Sebedits/refs/heads/main/Polish_20251114_144243975.jpg",
-      "https://raw.githubusercontent.com/seb-creator01/Sebedits/refs/heads/main/Polish_20251114_144328737.jpg",
-      "https://raw.githubusercontent.com/seb-creator01/Sebedits/refs/heads/main/Polish_20251114_144411281.jpg",
-      "https://raw.githubusercontent.com/seb-creator01/Sebedits/refs/heads/main/Polish_20251114_144510666.jpg"
-    ]
-  };
+      <div class="skill" onclick="showGallery('photoshop')">Photoshop</div>
+      <div class="skill" onclick="showGallery('graphics')">Graphic Design</div>
+      <div class="skill" onclick="showGallery('logo')">Logo Design</div>
+    </div>
+    <div class="gallery" id="gallery"></div>
 
-  function showGallery(category) {
-    const galleryDiv = document.getElementById('gallery');
-    galleryDiv.innerHTML = '';
-    galleries[category].forEach(url => {
-      const img = document.createElement('img');
-      img.src = url;
-      galleryDiv.appendChild(img);
-    });
-  }
+    <a href="https://wa.me/message/O2QERB7C5VE6E1" class="contact-btn" target="_blank">Chat on WhatsApp</a>
+  </div>
+  <script>
+    const images = {
+      photoshop: [
+        "https://raw.githubusercontent.com/seb-creator01/Sebedits/refs/heads/main/Polish_20251114_140742304.jpg",
+        "https://raw.githubusercontent.com/seb-creator01/Sebedits/refs/heads/main/Polish_20251114_140409899.jpg",
+        "https://raw.githubusercontent.com/seb-creator01/Sebedits/refs/heads/main/Polish_20251114_135409330.png",
+        "https://raw.githubusercontent.com/seb-creator01/Sebedits/refs/heads/main/Polish_20251114_123407199.png"
+      ],
+      graphics: [
+        "https://raw.githubusercontent.com/seb-creator01/Sebedits/refs/heads/main/Polish_20250801_141804654.png",
+        "https://raw.githubusercontent.com/seb-creator01/Sebedits/refs/heads/main/Screenshot_20251114-151329_Canva.jpg",
+        "https://raw.githubusercontent.com/seb-creator01/Sebedits/refs/heads/main/Screenshot_20251114-151126_Canva.jpg",
+        "https://raw.githubusercontent.com/seb-creator01/Sebedits/refs/heads/main/Screenshot_20251114-150736_Canva.jpg"
+      ],
+      logo: [
+        "https://raw.githubusercontent.com/seb-creator01/Sebedits/refs/heads/main/Polish_20251114_144243975.jpg",
+"https://raw.githubusercontent.com/seb-creator01/Sebedits/refs/heads/main/Polish_20251114_144328737.jpg",
+        "https://raw.githubusercontent.com/seb-creator01/Sebedits/refs/heads/main/Polish_20251114_144411281.jpg",
+        "https://raw.githubusercontent.com/seb-creator01/Sebedits/refs/heads/main/Polish_20251114_144510666.jpg"
+      ]
+    };
 
-  // Show Photoshop images by default on page load
-  showGallery('photoshop');
-</script>
+    function showGallery(category) {
+      const gallery = document.getElementById("gallery");
+      gallery.innerHTML = "";
+      images[category].forEach(url => {
+        const img = document.createElement("img");
+        img.src = url;
+        gallery.appendChild(img);
+      });
+    }
+  </script>
 </body>
 </html>
-<button class="skill-btn" onclick="showGallery('photoshop')">Photoshop</button>
-      <button class="skill-btn" onclick="showGallery('graphic')">Graphic Design</button>
-      <button class="skill-btn" onclick="showGallery('logo')">Logo Design</button>
-    </div>
-
-    <div id="gallery" class="gallery"></div>
-
-    <a href="https://wa.me/message/O2QERB7C5VE6E1" target="_blank" rel="noopener" class="contact-btn">Chat on WhatsApp</a>
-  </div>
-
-  <footer>© 2025 Sebedits. All rights reserved.</footer>
-
-<script>
-  const galleries = {
-    photoshop: [
-      "https://raw.githubusercontent.com/seb-creator01/Sebedits/refs/heads/main/Polish_20251114_140742304.jpg",
-      "https://raw.githubusercontent.com/seb-creator01/Sebedits/refs/heads/main/Polish_20251114_140409899.jpg",
-      "https://raw.githubusercontent.com/seb-creator01/Sebedits/refs/heads/main/Polish_20251114_135409330.png",
-      "https://raw.githubusercontent.com/seb-creator01/Sebedits/refs/heads/main/Polish_20251114_123407199.png"
-    ],
-    graphic: [
-      "https://raw.githubusercontent.com/seb-creator01/Sebedits/refs/heads/main/Polish_20250801_141804654.png",
-      "https://raw.githubusercontent.com/seb-creator01/Sebedits/refs/heads/main/Screenshot_20251114-151329_Canva.jpg",
