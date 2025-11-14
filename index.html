@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Sebedits</title>
+<title>Sebedits Portfolio</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
 
@@ -16,7 +16,7 @@
     flex-direction: column;
     min-height: 100vh;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     padding: 2rem;
   }
   .container {
@@ -42,23 +42,57 @@
   }
   p.bio {
     font-size: 1rem;
-    margin: 0.5rem 0 2rem 0;
+    margin: 0.5rem 0 1.5rem 0;
     color: #cbd5e1;
   }
   .skills {
     display: flex;
     justify-content: center;
-    gap: 1rem;
-margin-bottom: 2rem;
+    gap: 10px;
+    margin-bottom: 20px;
   }
-  .skill {
-    background: #0d6efd;
-    padding: 0.5rem 1rem;
+<button class="skill-btn" onclick="showGallery('photoshop')">Photoshop</button>
+      <button class="skill-btn" onclick="showGallery('graphic')">Graphic Design</button>
+      <button class="skill-btn" onclick="showGallery('logo')">Logo Design</button>
+    </div>
+
+    <div id="gallery" class="gallery"></div>
+
+    <a href="https://wa.me/message/O2QERB7C5VE6E1" target="_blank" rel="noopener" class="contact-btn">Chat on WhatsApp</a>
+  </div>
+
+  <footer>© 2025 Sebedits. All rights reserved.</footer>
+
+<script>
+  const galleries = {
+    photoshop: [
+      "https://raw.githubusercontent.com/seb-creator01/Sebedits/refs/heads/main/Polish_20251114_140742304.jpg",
+      "https://raw.githubusercontent.com/seb-creator01/Sebedits/refs/heads/main/Polish_20251114_140409899.jpg",
+      "https://raw.githubusercontent.com/seb-creator01/Sebedits/refs/heads/main/Polish_20251114_135409330.png",
+      "https://raw.githubusercontent.com/seb-creator01/Sebedits/refs/heads/main/Polish_20251114_123407199.png"
+    ],
+    graphic: [
+      "https://raw.githubusercontent.com/seb-creator01/Sebedits/refs/heads/main/Polish_20250801_141804654.png",
+      "https://raw.githubusercontent.com/seb-creator01/Sebedits/refs/heads/main/Screenshot_20251114-151329_Canva.jpg",
+.skill-btn {
+    padding: 8px 15px;
+    border: none;
     border-radius: 20px;
+    background-color: #0d6efd;
+    color: white;
     font-weight: 600;
-    font-size: 0.9rem;
-    cursor: default;
-    user-select: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  .skill-btn:hover {
+    background-color: #084cd3;
+  }
+  .gallery img {
+    max-width: 100%;
+    max-height: 200px;
+    margin: 10px auto;
+    border-radius: 10px;
+    display: block;
   }
   .contact-btn {
     background: #25d366;
@@ -73,6 +107,7 @@ margin-bottom: 2rem;
     display: inline-block;
     box-shadow: 0 5px 15px rgba(37, 211, 102, 0.4);
     transition: background 0.3s ease;
+    margin-top: 1.5rem;
   }
   .contact-btn:hover {
     background: #1ebe57;
@@ -86,22 +121,35 @@ margin-bottom: 2rem;
 </style>
 </head>
 <body>
+  <div class="container">
+    <img src="https://i.imgur.com/R5wN0Wf.jpg" alt="Sebedits Profile" class="profile-pic" />
+    <h1>Sebedits</h1>
+    <p class="bio">Creative graphic designer & web developer. Turning ideas into visual stories with passion and skill.</p>
 
-<div class="container">
-  <img src="https://raw.githubusercontent.com/seb-creator01/Sebedits/main/fotor-ai-20250725151423.jpg" alt="Profile Picture" class="profile-pic" />
-  <h1>Sebedits</h1>
-  <p class="bio">Creative graphic designer & web developer. Turning ideas into visual stories with passion and skill.</p>
+    <div class="skills">
+"https://raw.githubusercontent.com/seb-creator01/Sebedits/refs/heads/main/Screenshot_20251114-151126_Canva.jpg",
+      "https://raw.githubusercontent.com/seb-creator01/Sebedits/refs/heads/main/Screenshot_20251114-150736_Canva.jpg"
+    ],
+    logo: [
+      "https://raw.githubusercontent.com/seb-creator01/Sebedits/refs/heads/main/Polish_20251114_144243975.jpg",
+      "https://raw.githubusercontent.com/seb-creator01/Sebedits/refs/heads/main/Polish_20251114_144328737.jpg",
+      "https://raw.githubusercontent.com/seb-creator01/Sebedits/refs/heads/main/Polish_20251114_144411281.jpg",
+      "https://raw.githubusercontent.com/seb-creator01/Sebedits/refs/heads/main/Polish_20251114_144510666.jpg"
+    ]
+  };
 
-  <div class="skills">
-    <div class="skill">Photoshop</div>
-    <div class="skill">Graphic Design</div>
-    <div class="skill">Logo Design</div>
-  </div>
+  function showGallery(category) {
+    const galleryDiv = document.getElementById('gallery');
+    galleryDiv.innerHTML = '';
+    galleries[category].forEach(url => {
+      const img = document.createElement('img');
+      img.src = url;
+      galleryDiv.appendChild(img);
+    });
+  }
 
-  <p style="margin-bottom: 1rem;">Have a project or idea in mind? Let’s chat!</p>
-
-  <a href="https://wa.me/message/O2QERB7C5VE6E1" target="_blank" rel="noopener" class="contact-btn">Chat on WhatsApp</a>
-</div>
-<footer>© 2025 Sebedits. All rights reserved.</footer>
+  // Show Photoshop images by default on page load
+  showGallery('photoshop');
+</script>
 </body>
 </html>
