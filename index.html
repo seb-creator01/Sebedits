@@ -3,9 +3,10 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Sebedits</title>
+<title>Sebedits Portfolio</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
   body {
     margin: 0;
     font-family: 'Poppins', sans-serif;
@@ -18,6 +19,7 @@
     justify-content: center;
     padding: 2rem;
   }
+
   .container {
     background: #171c28;
     max-width: 400px;
@@ -27,6 +29,7 @@
     box-shadow: 0 8px 20px rgba(0,0,0,0.3);
     text-align: center;
   }
+
   .profile-pic {
     width: 130px;
     height: 130px;
@@ -35,30 +38,43 @@
     border: 4px solid #0d6efd;
     margin-bottom: 1rem;
   }
+
   h1 {
     margin: 0.5rem 0;
     font-weight: 600;
   }
-  p.bio {
-    font-size: 1rem;
-    margin: 0.5rem 0 2rem 0;
-    color: #cbd5e1;
+
+  .tabs {
+    text-align: center;
+    margin-bottom: 1rem;
   }
-  .skills {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-margin-bottom: 2rem;
+
+  .tabs button {
+    margin: 0 5px;
+    padding: 10px 15px;
+    background: white;
+    color: #0d6efd;
+    border: none;
+border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
   }
-  .skill {
-    background: #0d6efd;
-    padding: 0.5rem 1rem;
-    border-radius: 20px;
-    font-weight: 600;
-    font-size: 0.9rem;
-    cursor: default;
-    user-select: none;
+
+  .images-section {
+    display: none;
   }
+
+  .images-section.active {
+    display: block;
+  }
+
+  .images-section img {
+    width: 100%;
+    max-width: 300px;
+    margin: 10px 0;
+    border-radius: 10px;
+  }
+
   .contact-btn {
     background: #25d366;
     color: white;
@@ -73,40 +89,11 @@ margin-bottom: 2rem;
     box-shadow: 0 5px 15px rgba(37, 211, 102, 0.4);
     transition: background 0.3s ease;
   }
+
   .contact-btn:hover {
     background: #1ebe57;
   }
-.portfolio {
-      margin-top: 2rem;
-    }
-    .tabs {
-      text-align: center;
-      margin-bottom: 1rem;
-    }
-    .tabs button {
-      margin: 0 5px;
-      padding: 10px 15px;
-      background: white;
-      color: #0d6efd;
-      border: none;
-      border-radius: 5px;
-      font-weight: bold;
-      cursor: pointer;
-    }
-    .images-section img {
-      width: 100%;
-      max-width: 300px;
-      margin: 10px 0;
-      border-radius: 10px;
-    }
 
-    .images-section {
-      display: none;
-    }
-    .images-section.active {
-      display: block;
-    }
-  
   footer {
     margin-top: auto;
     color: #94a3b8;
@@ -115,61 +102,64 @@ margin-bottom: 2rem;
   }
 </style>
 </head>
-  </style>
-</head>
 <body>
 
 <div class="container">
   <img src="https://raw.githubusercontent.com/seb-creator01/Sebedits/main/fotor-ai-20250725151423.jpg" alt="Profile Picture" class="profile-pic" />
   <h1>Sebedits</h1>
-  <p class="bio">Creative graphic designer & web developer. Turning ideas into visual stories with passion and skill.</p>
 
-  <div class="skills">
-    <div class="skill">Photoshop</div>
-    <div class="skill">Graphic Design</div>
-    <div class="skill">Logo Design</div>
-  </div>
-  <p style="margin-bottom: 1rem;">Have a project or idea in mind? Let’s chat!</p>
- 
-<div class="portfolio">
   <div class="tabs">
-    <button onclick="showImages('photoshop')">Photoshop</button>
-    <button onclick="showImages('graphic')">Graphic Design</button>
-    <button onclick="showImages('logo')">Logo Design</button>
+    <button class="toggle-btn" data-target="photoshop">Photoshop</button>
+    <button class="toggle-btn" data-target="graphic">Graphic Design</button>
+    <button class="toggle-btn" data-target="logo">Logo Design</button>
   </div>
 
   <div id="photoshop" class="images-section">
-    <img src="https://raw.githubusercontent.com/seb-creator01/Sebedits/refs/heads/main/Polish_20251114_140742304.jpg" alt="Photoshop">
-    <img src="https://raw.githubusercontent.com/seb-creator01/Sebedits/refs/heads/main/Polish_20251114_140409899.jpg" alt="Photoshop">
-    <img src="https://raw.githubusercontent.com/seb-creator01/Sebedits/refs/heads/main/Polish_20251114_135409330.png" alt="Photoshop">
-    <img src="https://raw.githubusercontent.com/seb-creator01/Sebedits/refs/heads/main/Polish_20251114_123407199.png" alt="Photoshop">
+<img src="https://raw.githubusercontent.com/seb-creator01/Sebedits/refs/heads/main/Polish_20251114_140742304.jpg" alt="Photoshop 1" />
+    <img src="https://raw.githubusercontent.com/seb-creator01/Sebedits/refs/heads/main/Polish_20251114_140409899.jpg" alt="Photoshop 2" />
+    <img src="https://raw.githubusercontent.com/seb-creator01/Sebedits/refs/heads/main/Polish_20251114_135409330.png" alt="Photoshop 3" />
+    <img src="https://raw.githubusercontent.com/seb-creator01/Sebedits/refs/heads/main/Polish_20251114_123407199.png" alt="Photoshop 4" />
   </div>
 
-  <div id="graphic" class="images-section" style="display: none;">
-    <img src="https://raw.githubusercontent.com/seb-creator01/Sebedits/refs/heads/main/Polish_20250801_141804654.png" alt="Graphic Design">
-<img src="https://raw.githubusercontent.com/seb-creator01/Sebedits/refs/heads/main/Screenshot_20251114-151329_Canva.jpg" alt="Graphic Design">
-    <img src="https://raw.githubusercontent.com/seb-creator01/Sebedits/refs/heads/main/Screenshot_20251114-151126_Canva.jpg" alt="Graphic Design">
-    <img src="https://raw.githubusercontent.com/seb-creator01/Sebedits/refs/heads/main/Screenshot_20251114-150736_Canva.jpg" alt="Graphic Design">
+  <div id="graphic" class="images-section">
+    <img src="https://raw.githubusercontent.com/seb-creator01/Sebedits/refs/heads/main/Polish_20250801_141804654.png" alt="Graphic Design 1" />
+    <img src="https://raw.githubusercontent.com/seb-creator01/Sebedits/refs/heads/main/Screenshot_20251114-151329_Canva.jpg" alt="Graphic Design 2" />
+    <img src="https://raw.githubusercontent.com/seb-creator01/Sebedits/refs/heads/main/Screenshot_20251114-151126_Canva.jpg" alt="Graphic Design 3" />
+    <img src="https://raw.githubusercontent.com/seb-creator01/Sebedits/refs/heads/main/Screenshot_20251114-150736_Canva.jpg" alt="Graphic Design 4" />
   </div>
 
-  <div id="logo" class="images-section" style="display: none;">
-    <img src="https://raw.githubusercontent.com/seb-creator01/Sebedits/refs/heads/main/Polish_20251114_144243975.jpg" alt="Logo Design">
-    <img src="https://raw.githubusercontent.com/seb-creator01/Sebedits/refs/heads/main/Polish_20251114_144328737.jpg" alt="Logo Design">
-    <img src="https://raw.githubusercontent.com/seb-creator01/Sebedits/refs/heads/main/Polish_20251114_144411281.jpg" alt="Logo Design">
-    <img src="https://raw.githubusercontent.com/seb-creator01/Sebedits/refs/heads/main/Polish_20251114_144510666.jpg" alt="Logo Design">
+  <div id="logo" class="images-section">
+<img src="https://raw.githubusercontent.com/seb-creator01/Sebedits/refs/heads/main/Polish_20251114_144243975.jpg" alt="Logo Design 1" />
+    <img src="https://raw.githubusercontent.com/seb-creator01/Sebedits/refs/heads/main/Polish_20251114_144328737.jpg" alt="Logo Design 2" />
+    <img src="https://raw.githubusercontent.com/seb-creator01/Sebedits/refs/heads/main/Polish_20251114_144411281.jpg" alt="Logo Design 3" />
+    <img src="https://raw.githubusercontent.com/seb-creator01/Sebedits/refs/heads/main/Polish_20251114_144510666.jpg" alt="Logo Design 4" />
   </div>
-</div>
+
   <a href="https://wa.me/message/O2QERB7C5VE6E1" target="_blank" rel="noopener" class="contact-btn">Chat on WhatsApp</a>
-  <script>
-    function showImages(sectionId) {
-      const sections = document.querySelectorAll('.images-section');
-      sections.forEach(section => section.style.display = 'none');
-      document.getElementById(sectionId).style.display = 'block';
-    }
-  </script>
-</body>
-</html>
 </div>
+
 <footer>© 2025 Sebedits. All rights reserved.</footer>
+
+<script>
+  const buttons = document.querySelectorAll('.toggle-btn');
+  const sections = document.querySelectorAll('.images-section');
+
+  buttons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const target = btn.getAttribute('data-target');
+      sections.forEach(section => {
+        if(section.id === target) {
+          section.classList.add('active');
+        } else {
+          section.classList.remove('active');
+        }
+      });
+    });
+  });
+
+  // Show the first section by default on page load
+document.getElementById('photoshop').classList.add('active');
+</script>
+
 </body>
-</html>
+    </html>
