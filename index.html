@@ -5,8 +5,39 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Sebedits</title>
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+  
+    .toggle-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 1rem;
+    }
+    .toggle-buttons button {
+      padding: 0.5rem 1rem;
+      border: none;
+      background-color: #0d6efd;
+      color: white;
+      border-radius: 20px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    .toggle-buttons button:hover {
+      background-color: #084ccf;
+    }
+    .images-section {
+      display: none;
+      margin-bottom: 1rem;
+    }
+    .images-section img {
+      width: 100%;
+      max-width: 100%;
+      border-radius: 10px;
+      margin-bottom: 1rem;
+    }
+  </style>
+</head>
 
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
   body {
     margin: 0;
     font-family: 'Poppins', sans-serif;
@@ -85,6 +116,38 @@ margin-bottom: 2rem;
   }
 </style>
 </head>
+.portfolio {
+      margin-top: 2rem;
+    }
+    .tabs {
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+    .tabs button {
+      margin: 0 5px;
+      padding: 10px 15px;
+      background: white;
+      color: #0d6efd;
+      border: none;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .images-section img {
+      width: 100%;
+      max-width: 300px;
+      margin: 10px 0;
+      border-radius: 10px;
+    }
+
+    .images-section {
+      display: none;
+    }
+    .images-section.active {
+      display: block;
+    }
+  </style>
+</head>
 <body>
 
 <div class="container">
@@ -97,41 +160,42 @@ margin-bottom: 2rem;
     <div class="skill">Graphic Design</div>
     <div class="skill">Logo Design</div>
   </div>
-
   <p style="margin-bottom: 1rem;">Have a project or idea in mind? Let’s chat!</p>
-
-  <a href="https://wa.me/message/O2QERB7C5VE6E1" target="_blank" rel="noopener" class="contact-btn">Chat on WhatsApp</a>
  
-  <script>
-    const images = {
-      photoshop: [
-        "https://raw.githubusercontent.com/seb-creator01/Sebedits/refs/heads/main/Polish_20251114_140742304.jpg",
-        "https://raw.githubusercontent.com/seb-creator01/Sebedits/refs/heads/main/Polish_20251114_140409899.jpg",
-        "https://raw.githubusercontent.com/seb-creator01/Sebedits/refs/heads/main/Polish_20251114_135409330.png",
-        "https://raw.githubusercontent.com/seb-creator01/Sebedits/refs/heads/main/Polish_20251114_123407199.png"
-      ],
-      graphics: [
-        "https://raw.githubusercontent.com/seb-creator01/Sebedits/refs/heads/main/Polish_20250801_141804654.png",
-        "https://raw.githubusercontent.com/seb-creator01/Sebedits/refs/heads/main/Screenshot_20251114-151329_Canva.jpg",
-        "https://raw.githubusercontent.com/seb-creator01/Sebedits/refs/heads/main/Screenshot_20251114-151126_Canva.jpg",
-        "https://raw.githubusercontent.com/seb-creator01/Sebedits/refs/heads/main/Screenshot_20251114-150736_Canva.jpg"
-      ],
-      logo: [
-        "https://raw.githubusercontent.com/seb-creator01/Sebedits/refs/heads/main/Polish_20251114_144243975.jpg",
-"https://raw.githubusercontent.com/seb-creator01/Sebedits/refs/heads/main/Polish_20251114_144328737.jpg",
-        "https://raw.githubusercontent.com/seb-creator01/Sebedits/refs/heads/main/Polish_20251114_144411281.jpg",
-        "https://raw.githubusercontent.com/seb-creator01/Sebedits/refs/heads/main/Polish_20251114_144510666.jpg"
-      ]
-    };
+<div class="portfolio">
+  <div class="tabs">
+    <button onclick="showImages('photoshop')">Photoshop</button>
+    <button onclick="showImages('graphic')">Graphic Design</button>
+    <button onclick="showImages('logo')">Logo Design</button>
+  </div>
 
-    function showGallery(category) {
-      const gallery = document.getElementById("gallery");
-      gallery.innerHTML = "";
-      images[category].forEach(url => {
-        const img = document.createElement("img");
-        img.src = url;
-        gallery.appendChild(img);
-      });
+  <div id="photoshop" class="images-section">
+    <img src="https://raw.githubusercontent.com/seb-creator01/Sebedits/refs/heads/main/Polish_20251114_140742304.jpg" alt="Photoshop">
+    <img src="https://raw.githubusercontent.com/seb-creator01/Sebedits/refs/heads/main/Polish_20251114_140409899.jpg" alt="Photoshop">
+    <img src="https://raw.githubusercontent.com/seb-creator01/Sebedits/refs/heads/main/Polish_20251114_135409330.png" alt="Photoshop">
+    <img src="https://raw.githubusercontent.com/seb-creator01/Sebedits/refs/heads/main/Polish_20251114_123407199.png" alt="Photoshop">
+  </div>
+
+  <div id="graphic" class="images-section" style="display: none;">
+    <img src="https://raw.githubusercontent.com/seb-creator01/Sebedits/refs/heads/main/Polish_20250801_141804654.png" alt="Graphic Design">
+<img src="https://raw.githubusercontent.com/seb-creator01/Sebedits/refs/heads/main/Screenshot_20251114-151329_Canva.jpg" alt="Graphic Design">
+    <img src="https://raw.githubusercontent.com/seb-creator01/Sebedits/refs/heads/main/Screenshot_20251114-151126_Canva.jpg" alt="Graphic Design">
+    <img src="https://raw.githubusercontent.com/seb-creator01/Sebedits/refs/heads/main/Screenshot_20251114-150736_Canva.jpg" alt="Graphic Design">
+  </div>
+
+  <div id="logo" class="images-section" style="display: none;">
+    <img src="https://raw.githubusercontent.com/seb-creator01/Sebedits/refs/heads/main/Polish_20251114_144243975.jpg" alt="Logo Design">
+    <img src="https://raw.githubusercontent.com/seb-creator01/Sebedits/refs/heads/main/Polish_20251114_144328737.jpg" alt="Logo Design">
+    <img src="https://raw.githubusercontent.com/seb-creator01/Sebedits/refs/heads/main/Polish_20251114_144411281.jpg" alt="Logo Design">
+    <img src="https://raw.githubusercontent.com/seb-creator01/Sebedits/refs/heads/main/Polish_20251114_144510666.jpg" alt="Logo Design">
+  </div>
+</div>
+  <a href="https://wa.me/message/O2QERB7C5VE6E1" target="_blank" rel="noopener" class="contact-btn">Chat on WhatsApp</a>
+  <script>
+    function showImages(sectionId) {
+      const sections = document.querySelectorAll('.images-section');
+      sections.forEach(section => section.style.display = 'none');
+      document.getElementById(sectionId).style.display = 'block';
     }
   </script>
 </body>
