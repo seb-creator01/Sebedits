@@ -6,6 +6,7 @@
   <title>Sebedits</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
     body {
       margin: 0;
       font-family: 'Poppins', sans-serif;
@@ -15,7 +16,7 @@
       flex-direction: column;
       min-height: 100vh;
       align-items: center;
-      justify-content: center;
+      justify-content: flex-start;
       padding: 2rem;
     }
     .container {
@@ -32,54 +33,31 @@
       height: 130px;
       border-radius: 50%;
       object-fit: cover;
-      border: 4px solid #0d6efd;
+border: 4px solid #0d6efd;
       margin-bottom: 1rem;
     }
     h1 {
       margin: 0.5rem 0;
-font-weight: 600;
+      font-weight: 600;
     }
     p.bio {
       font-size: 1rem;
       margin: 0.5rem 0 2rem 0;
       color: #cbd5e1;
     }
-    .skills {
+    .tabs {
       display: flex;
       justify-content: center;
       gap: 1rem;
-      margin-bottom: 2rem;
+      margin-bottom: 1rem;
     }
-    .skill {
+    .tabs button {
+      padding: 10px 15px;
       background: #0d6efd;
-      padding: 0.5rem 1rem;
-      border-radius: 20px;
-      font-weight: 600;
-      font-size: 0.9rem;
-      cursor: default;
-      user-select: none;
-    }
-    .contact-btn {
-      background: #25d366;
       color: white;
       border: none;
-      padding: 1rem 2rem;
-      border-radius: 50px;
-      font-size: 1.1rem;
+      border-radius: 20px;
       font-weight: 600;
-      cursor: pointer;
-      text-decoration: none;
-      display: inline-block;
-      box-shadow: 0 5px 15px rgba(37, 211, 102, 0.4);
-      transition: background 0.3s ease;
-    }
-    .contact-btn:hover {
-      background: #1ebe57;
-    }
-    .tabs {
-      margin: 2rem 0 1rem;
-    }
-    .tabs .skill {
       cursor: pointer;
     }
     .images-section {
@@ -94,11 +72,29 @@ font-weight: 600;
       margin: 10px 0;
       border-radius: 10px;
     }
+    .contact-btn {
+      background: #25d366;
+      color: white;
+      border: none;
+      padding: 1rem 2rem;
+      border-radius: 50px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      box-shadow: 0 5px 15px rgba(37, 211, 102, 0.4);
+      transition: background 0.3s ease;
+      margin-top: 2rem;
+    }
+    .contact-btn:hover {
+      background: #1ebe57;
+    }
     footer {
-      margin-top: auto;
+      margin-top: 2rem;
       color: #94a3b8;
       font-size: 0.9rem;
-      padding: 1rem 0 0;
+    }
 </style>
 </head>
 <body>
