@@ -1,201 +1,209 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Sebedits</title>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Sebedits Portfolio</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
 
-    body {
-      margin: 0;
-      font-family: 'Poppins', sans-serif;
-      background: #0d6efd;
-      color: white;
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-      align-items: center;
-      justify-content: center;
-      padding: 2rem;
-    }
+  body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: #0d6efd;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+  }
+  .container {
+    background: #171c28;
+    max-width: 400px;
+    width: 100%;
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    text-align: center;
+  }
+  .profile-pic {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #0d6efd;
+    margin-bottom: 1rem;
+  }
+  h1 {
+    margin: 0.5rem 0;
+    font-weight: 600;
+  }
+  p.bio {
+    font-size: 1rem;
+    margin: 0.5rem 0 1rem 0;
+    color: #cbd5e1;
+  }
+  .skills {
+    display: flex;
+justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  .skill {
+    background: #0d6efd;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: default;
+    user-select: none;
+  }
 
-    .container {
-      background: #171c28;
-      max-width: 400px;
-      width: 100%;
-      border-radius: 15px;
-      padding: 2rem;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-      text-align: center;
+  .portfolio {
+    margin-top: 1rem;
+  }
+  .tabs {
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  .tabs button {
+    margin: 0 8px;
+    padding: 12px 22px;
+    background: #0d6efd;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 0 8px #0d6efd88;
+    transition: background 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+  /* Pulse animation for awareness */
+  .tabs button.awareness::after {
+    content: "";
+    position: absolute;
+    top: -10px; left: -10px; right: -10px; bottom: -10px;
+    border-radius: 50px;
+    box-shadow: 0 0 8px 2px #00fffdaa;
+    animation: pulse 2s infinite;
+    z-index: -1;
+  }
+  @keyframes pulse {
+    0% {
+      box-shadow: 0 0 8px 2px #00fffdaa;
+      opacity: 1;
     }
+    50% {
+      box-shadow: 0 0 15px 6px #00fffd44;
+      opacity: 0.6;
+    }
+    100% {
+      box-shadow: 0 0 8px 2px #00fffdaa;
+      opacity: 1;
+    }
+  }
+  .tabs button:hover {
+    background: #0b53d0;
+  }
+  .tabs button.active {
+background: #00f2ff;
+    color: #171c28;
+    box-shadow: 0 0 15px #00f2ffbb;
+  }
 
-    .profile-pic {
-      width: 130px;
-      height: 130px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 4px solid #0d6efd;
-      margin-bottom: 1rem;
-    }
+  .images-section img {
+    width: 100%;
+    max-width: 300px;
+    margin: 10px auto;
+    border-radius: 10px;
+    display: block;
+  }
+  .images-section {
+    display: none;
+  }
+  .images-section.active {
+    display: block;
+  }
 
-    h1 {
-text-decoration: none;
-      display: inline-block;
-      box-shadow: 0 5px 15px rgba(37, 211, 102, 0.4);
-      transition: background 0.3s ease;
-    }
+  p.project-msg {
+    margin: 1.5rem 0 1rem 0;
+    font-weight: 600;
+    font-size: 1rem;
+    color: #cbd5e1;
+  }
 
-    .contact-btn:hover {
-      background: #1ebe57;
-    }
-
-    footer {
-      margin-top: auto;
-      color: #94a3b8;
-      font-size: 0.9rem;
-      padding: 1rem 0 0;
-    }
-
-    @keyframes bounce {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-5px); }
-    }
-
-    @keyframes glow {
-      from { box-shadow: 0 0 5px #0d6efd; }
-      to { box-shadow: 0 0 15px #0d6efd; }
-    }
-  </style>
+  .contact-btn {
+    background: #25d366;
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    box-shadow: 0 5px 15px rgba(37, 211, 102, 0.4);
+    transition: background 0.3s ease;
+  }
+  .contact-btn:hover {
+    background: #1ebe57;
+  }
+  footer {
+    margin-top: auto;
+    color: #94a3b8;
+    font-size: 0.9rem;
+    padding: 1rem 0 0;
+  }
+</style>
 </head>
 <body>
   <div class="container">
-    <img src="https://raw.githubusercontent.com/seb-creator01/Sebedits/main/fotor-ai-20250725151423.jpg" alt="Profile Picture" class="profile-pic" />
+    <img src="https://raw.githubusercontent.com/seb-creator01/Sebedits/main/fotor-ai-20250725151423.jpg" alt="Sebedits Profile" class="profile-pic" />
     <h1>Sebedits</h1>
     <p class="bio">Creative graphic designer & web developer. Turning ideas into visual stories with passion and skill.</p>
 
-    <p class="message-guide">⬇️ Tap a skill below to view my portfolio work</p>
-
     <div class="skills">
-      <button class="toggle-btn" data-target="photoshop">Photoshop</button>
-      <button class="toggle-btn" data-target="graphic">Graphic Design</button>
-      <button class="toggle-btn" data-target="logo">Logo Design</button>
+<div class="skill">Photoshop</div>
+      <div class="skill">Graphic Design</div>
+      <div class="skill">Logo Design</div>
     </div>
 
     <div class="portfolio">
-margin: 0.5rem 0;
-      font-weight: 600;
-    }
-
-    p.bio {
-      font-size: 1rem;
-      margin: 0.5rem 0 1rem 0;
-      color: #cbd5e1;
-    }
-
-    .message-guide {
-      font-size: 0.9rem;
-      color: #cbd5e1;
-      animation: bounce 1.5s infinite;
-      margin-bottom: 1rem;
-    }
-
-    .skills {
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-      margin-bottom: 1rem;
-    }
-
-    .toggle-btn {
-      background: white;
-      color: #0d6efd;
-      padding: 0.5rem 1rem;
-      border-radius: 20px;
-      font-weight: 600;
-      font-size: 0.9rem;
-      cursor: pointer;
-      border: none;
-      animation: glow 1.5s ease-in-out infinite alternate;
-    }
-
-    .portfolio {
-      margin-top: 1rem;
-    }
-
-    .images-section {
-      display: none;
-    }
-
-    .images-section.active {
-      display: block;
-    }
-
-    .images-section img {
-      width: 100%;
-      max-width: 300px;
-      margin: 10px 0;
-      border-radius: 10px;
-    }
-
-    .chat-message {
-      margin: 2rem 0 1rem;
-      font-size: 0.95rem;
-      color: #cbd5e1;
-    }
-
-    .contact-btn {
-      background: #25d366;
-      color: white;
-      border: none;
-      padding: 1rem 2rem;
-      border-radius: 50px;
-      font-size: 1.1rem;
-      font-weight: 600;
-      cursor: pointer;
-<div id="photoshop" class="images-section">
-        <img src="https://raw.githubusercontent.com/seb-creator01/Sebedits/refs/heads/main/Polish_20251114_140742304.jpg" />
-        <img src="https://raw.githubusercontent.com/seb-creator01/Sebedits/refs/heads/main/Polish_20251114_140409899.jpg" />
-        <img src="https://raw.githubusercontent.com/seb-creator01/Sebedits/refs/heads/main/Polish_20251114_135409330.png" />
-        <img src="https://raw.githubusercontent.com/seb-creator01/Sebedits/refs/heads/main/Polish_20251114_123407199.png" />
+      <div class="tabs">
+        <button class="toggle-btn awareness active" data-target="photoshop">Photoshop</button>
+        <button class="toggle-btn awareness" data-target="graphic">Graphic Design</button>
+        <button class="toggle-btn awareness" data-target="logo">Logo Design</button>
       </div>
 
+      <div id="photoshop" class="images-section active">
+        <img src="https://raw.githubusercontent.com/seb-creator01/Sebedits/main/Polish_20251114_140742304.jpg" alt="Photoshop 1" />
+        <img src="https://raw.githubusercontent.com/seb-creator01/Sebedits/main/Polish_20251114_140409899.jpg" alt="Photoshop 2" />
+        <img src="https://raw.githubusercontent.com/seb-creator01/Sebedits/main/Polish_20251114_135409330.png" alt="Photoshop 3" />
+        <img src="https://raw.githubusercontent.com/seb-creator01/Sebedits/main/Polish_20251114_123407199.png" alt="Photoshop 4" />
+      </div>
       <div id="graphic" class="images-section">
-        <img src="https://raw.githubusercontent.com/seb-creator01/Sebedits/refs/heads/main/Polish_20250801_141804654.png" />
-        <img src="https://raw.githubusercontent.com/seb-creator01/Sebedits/refs/heads/main/Screenshot_20251114-151329_Canva.jpg" />
-        <img src="https://raw.githubusercontent.com/seb-creator01/Sebedits/refs/heads/main/Screenshot_20251114-151126_Canva.jpg" />
-        <img src="https://raw.githubusercontent.com/seb-creator01/Sebedits/refs/heads/main/Screenshot_20251114-150736_Canva.jpg" />
+        <img src="https://raw.githubusercontent.com/seb-creator01/Sebedits/main/Polish_20250801_141804654.png" alt="Graphic Design 1" />
+<img src="https://raw.githubusercontent.com/seb-creator01/Sebedits/main/Screenshot_20251114-151329_Canva.jpg" alt="Graphic Design 2" />
+        <img src="https://raw.githubusercontent.com/seb-creator01/Sebedits/main/Screenshot_20251114-151126_Canva.jpg" alt="Graphic Design 3" />
+        <img src="https://raw.githubusercontent.com/seb-creator01/Sebedits/main/Screenshot_20251114-150736_Canva.jpg" alt="Graphic Design 4" />
       </div>
-
       <div id="logo" class="images-section">
-<img src="https://raw.githubusercontent.com/seb-creator01/Sebedits/refs/heads/main/Polish_20251114_144243975.jpg" />
-        <img src="https://raw.githubusercontent.com/seb-creator01/Sebedits/refs/heads/main/Polish_20251114_144328737.jpg" />
-        <img src="https://raw.githubusercontent.com/seb-creator01/Sebedits/refs/heads/main/Polish_20251114_144411281.jpg" />
-        <img src="https://raw.githubusercontent.com/seb-creator01/Sebedits/refs/heads/main/Polish_20251114_144510666.jpg" />
+        <img src="https://raw.githubusercontent.com/seb-creator01/Sebedits/main/Polish_20251114_144243975.jpg" alt="Logo Design 1" />
+        <img src="https://raw.githubusercontent.com/seb-creator01/Sebedits/main/Polish_20251114_144328737.jpg" alt="Logo Design 2" />
+        <img src="https://raw.githubusercontent.com/seb-creator01/Sebedits/main/Polish_20251114_144411281.jpg" alt="Logo Design 3" />
+        <img src="https://raw.githubusercontent.com/seb-creator01/Sebedits/main/Polish_20251114_144510666.jpg" alt="Logo Design 4" />
       </div>
     </div>
 
-    <p class="chat-message">Have a project or idea in mind? Let’s chat!</p>
+    <p class="project-msg">Have a project or idea in mind? Let’s chat!</p>
     <a href="https://wa.me/message/O2QERB7C5VE6E1" target="_blank" rel="noopener" class="contact-btn">Chat on WhatsApp</a>
   </div>
-
-  <footer>© 2025 Sebedits. All rights reserved.</footer>
+<footer>© 2025 Sebedits. All rights reserved.</footer>
 
   <script>
-    const buttons = document.querySelectorAll(".toggle-btn");
-    const sections = document.querySelectorAll(".images-section");
-
-    buttons.forEach(button => {
-      button.addEventListener("click", () => {
-        const target = button.getAttribute("data-target");
-
-        sections.forEach(section => {
-          section.classList.remove("active");
-        });
-
-        document.getElementById(target).classList.add("active");
-      });
-    });
-  </script>
-</body>
-</html>
+    const buttons = document.querySelectorAll
