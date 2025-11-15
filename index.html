@@ -1,171 +1,158 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Sebedits</title>
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sebedits</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: #0d6efd;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      align-items: center;
+      padding: 2rem;
+    }
 
-  body {
-    margin: 0;
-    font-family: 'Poppins', sans-serif;
-    background: #0d6efd;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    align-items: center;
-    justify-content: center;
-    padding: 2rem;
-  }
-  .container {
-    background: #171c28;
-    max-width: 400px;
-    width: 100%;
-    border-radius: 15px;
-    padding: 2rem;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-    text-align: center;
-  }
-  .profile-pic {
-    width: 130px;
-    height: 130px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 4px solid #0d6efd;
-    margin-bottom: 1rem;
-  }
-  h1 {
-    margin: 0.5rem 0;
-    font-weight: 600;
-  }
-  p.bio {
-    font-size: 1rem;
-    margin: 0.5rem 0 1.5rem 0;
-color: #cbd5e1;
-  }
-  /* Blue pulse buttons */
-  .toggle-btn {
-    background: #0d6efd;
-    color: white;
-    padding: 0.7rem 1.4rem;
-    border-radius: 50px;
-    border: none;
-    font-weight: 600;
-    font-size: 1rem;
-    margin: 0 0.3rem;
-    cursor: pointer;
-    box-shadow: 0 0 8px #0d6efd88;
-    transition: box-shadow 0.3s ease;
-    position: relative;
-    overflow: hidden;
-  }
-  .toggle-btn:hover, .toggle-btn.active {
-    box-shadow: 0 0 18px #0d6efdcc;
-    animation: pulse 2s infinite;
-  }
-  @keyframes pulse {
-    0% { box-shadow: 0 0 10px #0d6efdcc; }
-    50% { box-shadow: 0 0 20px #0d6efdff; }
-    100% { box-shadow: 0 0 10px #0d6efdcc; }
-  }
+    .container {
+      background: #171c28;
+      max-width: 400px;
+      width: 100%;
+      border-radius: 15px;
+      padding: 2rem;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+      text-align: center;
+    }
 
-  /* Portfolio section */
-  .portfolio {
-    margin-top: 1.5rem;
-  }
-  .tabs {
-    margin-bottom: 1rem;
-  }
+    .profile-pic {
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid #0d6efd;
+      margin-bottom: 1rem;
+    }
 
-  /* Images */
-  .images-section {
-    display: none;
-    margin-top: 1rem;
-  }
-  .images-section.active {
-    display: block;
-  }
-  .images-section img {
-    width: 100%;
-    max-width: 300px;
-    margin: 10px 0;
-    border-radius: 10px;
-  }
+    h1 {
+      margin: 0.5rem 0;
+      font-weight: 600;
+    }
 
-  /* Chat message and WhatsApp button */
-  .chat-text {
-    margin: 1.5rem 0 0.8rem 0;
-    font-weight: 500;
-    font-size: 1rem;
-    color: #cbd5e1;
-  }
-  .contact-btn {
-    background: #25d366;
-    color: white;
-    border: none;
-    padding: 1rem 2rem;
-    border-radius: 50px;
-<img src="https://raw.githubusercontent.com/seb-creator01/Sebedits/main/Polish_20251114_140409899.jpg" alt="Photoshop Work 2" />
-        <img src="https://raw.githubusercontent.com/seb-creator01/Sebedits/main/Polish_20251114_135409330.png" alt="Photoshop Work 3" />
-        <img src="https://raw.githubusercontent.com/seb-creator01/Sebedits/main/Polish_20251114_123407199.png" alt="Photoshop Work 4" />
-      </div>
+    p.bio {
+font-size: 1rem;
+      margin: 0.5rem 0 2rem 0;
+      color: #cbd5e1;
+    }
 
-      <div id="graphic" class="images-section">
-        <img src="https://raw.githubusercontent.com/seb-creator01/Sebedits/main/Polish_20250801_141804654.png" alt="Graphic Design Work 1" />
-        <img src="https://raw.githubusercontent.com/seb-creator01/Sebedits/main/Screenshot_20251114-151329_Canva.jpg" alt="Graphic Design Work 2" />
-        <img src="https://raw.githubusercontent.com/seb-creator01/Sebedits/main/Screenshot_20251114-151126_Canva.jpg" alt="Graphic Design Work 3" />
-        <img src="https://raw.githubusercontent.com/seb-creator01/Sebedits/main/Screenshot_20251114-150736_Canva.jpg" alt="Graphic Design Work 4" />
-      </div>
+    .tabs {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+    }
 
-      <div id="logo" class="images-section">
-        <img src="https://raw.githubusercontent.com/seb-creator01/Sebedits/main/Polish_20251114_144243975.jpg" alt="Logo Design Work 1" />
-font-size: 1.1rem;
-    font-weight: 600;
-    cursor: pointer;
-    text-decoration: none;
-    display: inline-block;
-    box-shadow: 0 5px 15px rgba(37, 211, 102, 0.4);
-    transition: background 0.3s ease;
-  }
-  .contact-btn:hover {
-    background: #1ebe57;
-  }
+    .toggle-btn {
+      padding: 10px 15px;
+      border-radius: 20px;
+      font-weight: 600;
+      background: #0d6efd;
+      color: white;
+      border: 2px solid #ffffff33;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
 
-  footer {
-    margin-top: auto;
-    color: #94a3b8;
-    font-size: 0.9rem;
-    padding: 1rem 0 0;
-  }
-</style>
+    .toggle-btn:hover {
+      box-shadow: 0 0 10px #0d6efd;
+    }
+
+    .images-section {
+      display: none;
+    }
+
+    .images-section.active {
+      display: block;
+    }
+
+    .images-section img {
+      width: 100%;
+      max-width: 300px;
+      margin: 10px 0;
+      border-radius: 10px;
+    }
+
+    .contact-text {
+      margin-top: 1.5rem;
+      font-size: 0.95rem;
+      color: #cbd5e1;
+    }
+
+    .contact-btn {
+      background: #25d366;
+      color: white;
+      border: none;
+      padding: 1rem 2rem;
+      border-radius: 50px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 1rem;
+      box-shadow: 0 5px 15px rgba(37, 211, 102, 0.4);
+      transition: background 0.3s ease;
+    }
+
+    .contact-btn:hover {
+background: #1ebe57;
+    }
+
+    footer {
+      margin-top: 2rem;
+      color: #94a3b8;
+      font-size: 0.9rem;
+    }
+  </style>
 </head>
 <body>
-
   <div class="container">
-    <img src="https://raw.githubusercontent.com/seb-creator01/Sebedits/main/fotor-ai-20250725151423.jpg" alt="Sebedits Profile" class="profile-pic" />
+    <img src="https://raw.githubusercontent.com/seb-creator01/Sebedits/main/fotor-ai-20250725151423.jpg" alt="Profile Picture" class="profile-pic" />
     <h1>Sebedits</h1>
     <p class="bio">Creative graphic designer & web developer. Turning ideas into visual stories with passion and skill.</p>
 
-    <div class="portfolio">
-      <div class="tabs">
-        <button class="toggle-btn active" data-target="photoshop">Photoshop</button>
-        <button class="toggle-btn" data-target="graphic">Graphic Design</button>
-        <button class="toggle-btn" data-target="logo">Logo Design</button>
-      </div>
-
-      <div id="photoshop" class="images-section active">
-        <img src="https://raw.githubusercontent.com/seb-creator01/Sebedits/main/Polish_20251114_140742304.jpg" alt="Photoshop Work 1" />
-<img src="https://raw.githubusercontent.com/seb-creator01/Sebedits/main/Polish_20251114_144328737.jpg" alt="Logo Design Work 2" />
-        <img src="https://raw.githubusercontent.com/seb-creator01/Sebedits/main/Polish_20251114_144411281.jpg" alt="Logo Design Work 3" />
-        <img src="https://raw.githubusercontent.com/seb-creator01/Sebedits/main/Polish_20251114_144510666.jpg" alt="Logo Design Work 4" />
-      </div>
+    <div class="tabs">
+      <button class="toggle-btn" data-target="photoshop">Photoshop</button>
+      <button class="toggle-btn" data-target="graphic">Graphic Design</button>
+      <button class="toggle-btn" data-target="logo">Logo Design</button>
     </div>
 
-    <p class="chat-text">Have a project or idea in mind? Let’s chat!</p>
+    <div id="photoshop" class="images-section active">
+      <img src="https://raw.githubusercontent.com/seb-creator01/Sebedits/refs/heads/main/Polish_20251114_140742304.jpg" />
+      <img src="https://raw.githubusercontent.com/seb-creator01/Sebedits/refs/heads/main/Polish_20251114_140409899.jpg" />
+      <img src="https://raw.githubusercontent.com/seb-creator01/Sebedits/refs/heads/main/Polish_20251114_135409330.png" />
+      <img src="https://raw.githubusercontent.com/seb-creator01/Sebedits/refs/heads/main/Polish_20251114_123407199.png" />
+    </div>
+<div id="graphic" class="images-section">
+      <img src="https://raw.githubusercontent.com/seb-creator01/Sebedits/refs/heads/main/Polish_20250801_141804654.png" />
+      <img src="https://raw.githubusercontent.com/seb-creator01/Sebedits/refs/heads/main/Screenshot_20251114-151329_Canva.jpg" />
+      <img src="https://raw.githubusercontent.com/seb-creator01/Sebedits/refs/heads/main/Screenshot_20251114-151126_Canva.jpg" />
+      <img src="https://raw.githubusercontent.com/seb-creator01/Sebedits/refs/heads/main/Screenshot_20251114-150736_Canva.jpg" />
+    </div>
 
-    <a href="https://wa.me/message/O2QERB7C5VE6E1" target="_blank" rel="noopener" class="contact-btn">Chat on WhatsApp</a>
+    <div id="logo" class="images-section">
+      <img src="https://raw.githubusercontent.com/seb-creator01/Sebedits/refs/heads/main/Polish_20251114_144243975.jpg" />
+      <img src="https://raw.githubusercontent.com/seb-creator01/Sebedits/refs/heads/main/Polish_20251114_144328737.jpg" />
+      <img src="https://raw.githubusercontent.com/seb-creator01/Sebedits/refs/heads/main/Polish_20251114_144411281.jpg" />
+      <img src="https://raw.githubusercontent.com/seb-creator01/Sebedits/refs/heads/main/Polish_20251114_144510666.jpg" />
+    </div>
+
+    <p class="contact-text">Have a project or idea in mind? Let’s chat!</p>
+<a href="https://wa.me/message/O2QERB7C5VE6E1" target="_blank" class="contact-btn">Chat on WhatsApp</a>
   </div>
 
   <footer>© 2025 Sebedits. All rights reserved.</footer>
@@ -176,20 +163,11 @@ font-size: 1.1rem;
 
     buttons.forEach(btn => {
       btn.addEventListener('click', () => {
-        // Remove active class from all buttons
-        buttons.forEach(b => b.classList.remove('active'));
-        // Add active to clicked button
-        btn.classList.add('active');
-
-        // Hide all sections
-        sections.forEach(section => section.classList.remove('active'));
-
-        // Show target section
+        sections.forEach(sec => sec.classList.remove('active'));
         const target = btn.getAttribute('data-target');
-document.getElementById(target).classList.add('active');
+        document.getElementById(target).classList.add('active');
       });
     });
   </script>
-
 </body>
 </html>
