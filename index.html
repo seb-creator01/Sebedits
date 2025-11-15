@@ -205,5 +205,20 @@ background: #00f2ff;
   </div>
 <footer>© 2025 Sebedits. All rights reserved.</footer>
 
-  <script>
-    const buttons = document.querySelectorAll
+ <script>
+  const buttons = document.querySelectorAll('.toggle-btn');
+  const sections = document.querySelectorAll('.images-section');
+
+  buttons.forEach(btn => {
+btn.addEventListener('click', () => {
+      const target = btn.getAttribute('data-target');
+      sections.forEach(section => {
+        section.classList.remove('active');
+      });
+      document.getElementById(target).classList.add('active');
+    });
+  });
+</script>
+
+</body>
+  </html>
