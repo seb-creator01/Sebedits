@@ -2,10 +2,11 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sebedits</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sebedits Portfolio</title>
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
     body {
       margin: 0;
       font-family: 'Poppins', sans-serif;
@@ -15,6 +16,7 @@
       flex-direction: column;
       min-height: 100vh;
       align-items: center;
+      justify-content: center;
       padding: 2rem;
     }
 
@@ -34,7 +36,7 @@
       border-radius: 50%;
       object-fit: cover;
       border: 4px solid #0d6efd;
-      margin-bottom: 1rem;
+margin-bottom: 1rem;
     }
 
     h1 {
@@ -43,53 +45,90 @@
     }
 
     p.bio {
-font-size: 1rem;
-      margin: 0.5rem 0 2rem 0;
+      font-size: 1rem;
+      margin: 0.5rem 0 1.5rem 0;
       color: #cbd5e1;
     }
 
-    .tabs {
+    .skills {
       display: flex;
       justify-content: center;
-      flex-wrap: wrap;
-      gap: 0.5rem;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .skill {
+      background: #0d6efd;
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      cursor: default;
+      user-select: none;
+    }
+
+    /* Glowing blue buttons */
+    .tabs {
+      text-align: center;
       margin-bottom: 1rem;
     }
 
-    .toggle-btn {
-      padding: 10px 15px;
-      border-radius: 20px;
-      font-weight: 600;
+    .tabs button {
+      margin: 0 10px;
+      padding: 10px 20px;
       background: #0d6efd;
       color: white;
-      border: 2px solid #ffffff33;
+      border: none;
+      border-radius: 25px;
+      font-weight: 600;
+      font-size: 1rem;
       cursor: pointer;
-      transition: all 0.3s ease;
+      box-shadow:
+        0 0 5px #0d6efd,
+        0 0 10px #0d6efd,
+        0 0 20px #0d6efd,
+        0 0 40px #0d6efd;
+      transition: background 0.3s ease;
     }
 
-    .toggle-btn:hover {
-      box-shadow: 0 0 10px #0d6efd;
+    .tabs button:hover,
+    .tabs button.active {
+      background: #1a86ff;
+      box-shadow:
+        0 0 10px #1a86ff,
+        0 0 20px #1a86ff,
+        0 0 40px #1a86ff,
+        0 0 80px #1a86ff;
+    }
+
+    .awareness {
+      margin-bottom: 1rem;
+      font-size: 0.9rem;
+color: #bbe3ff;
+      font-style: italic;
     }
 
     .images-section {
       display: none;
+      margin-top: 1rem;
     }
 
     .images-section.active {
       display: block;
+      animation: fadeIn 0.7s ease forwards;
     }
 
     .images-section img {
       width: 100%;
-      max-width: 300px;
+      max-width: 320px;
       margin: 10px 0;
-      border-radius: 10px;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.5);
     }
 
-    .contact-text {
-      margin-top: 1.5rem;
-      font-size: 0.95rem;
-      color: #cbd5e1;
+    @keyframes fadeIn {
+      from {opacity: 0; transform: translateY(10px);}
+      to {opacity: 1; transform: translateY(0);}
     }
 
     .contact-btn {
@@ -103,71 +142,83 @@ font-size: 1rem;
       cursor: pointer;
       text-decoration: none;
       display: inline-block;
-      margin-top: 1rem;
       box-shadow: 0 5px 15px rgba(37, 211, 102, 0.4);
       transition: background 0.3s ease;
+      margin-top: 2rem;
     }
 
     .contact-btn:hover {
-background: #1ebe57;
+      background: #1ebe57;
     }
 
     footer {
-      margin-top: 2rem;
+      margin-top: auto;
       color: #94a3b8;
       font-size: 0.9rem;
+      padding: 1rem 0 0;
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <img src="https://raw.githubusercontent.com/seb-creator01/Sebedits/main/fotor-ai-20250725151423.jpg" alt="Profile Picture" class="profile-pic" />
-    <h1>Sebedits</h1>
+    <img src="https://raw.githubusercontent.com/seb-creator01/Sebedits/main/fotor-ai-20250725151423.jpg" class="profile-pic" alt="Profile" />
+<h1>Sebedits</h1>
     <p class="bio">Creative graphic designer & web developer. Turning ideas into visual stories with passion and skill.</p>
 
+    <div class="skills">
+      <div class="skill">Photoshop</div>
+      <div class="skill">Graphic Design</div>
+      <div class="skill">Logo Design</div>
+    </div>
+
+    <p class="awareness">Tap the glowing blue buttons to explore my work 👇</p>
+
     <div class="tabs">
-      <button class="toggle-btn" data-target="photoshop">Photoshop</button>
+      <button class="toggle-btn active" data-target="photoshop">Photoshop</button>
       <button class="toggle-btn" data-target="graphic">Graphic Design</button>
       <button class="toggle-btn" data-target="logo">Logo Design</button>
     </div>
 
     <div id="photoshop" class="images-section active">
-      <img src="https://raw.githubusercontent.com/seb-creator01/Sebedits/refs/heads/main/Polish_20251114_140742304.jpg" />
-      <img src="https://raw.githubusercontent.com/seb-creator01/Sebedits/refs/heads/main/Polish_20251114_140409899.jpg" />
-      <img src="https://raw.githubusercontent.com/seb-creator01/Sebedits/refs/heads/main/Polish_20251114_135409330.png" />
-      <img src="https://raw.githubusercontent.com/seb-creator01/Sebedits/refs/heads/main/Polish_20251114_123407199.png" />
+      <img src="https://raw.githubusercontent.com/seb-creator01/Sebedits/main/Polish_20251114_140742304.jpg" />
+      <img src="https://raw.githubusercontent.com/seb-creator01/Sebedits/main/Polish_20251114_140409899.jpg" />
+      <img src="https://raw.githubusercontent.com/seb-creator01/Sebedits/main/Polish_20251114_135409330.png" />
+      <img src="https://raw.githubusercontent.com/seb-creator01/Sebedits/main/Polish_20251114_123407199.png" />
     </div>
-<div id="graphic" class="images-section">
-      <img src="https://raw.githubusercontent.com/seb-creator01/Sebedits/refs/heads/main/Polish_20250801_141804654.png" />
-      <img src="https://raw.githubusercontent.com/seb-creator01/Sebedits/refs/heads/main/Screenshot_20251114-151329_Canva.jpg" />
-      <img src="https://raw.githubusercontent.com/seb-creator01/Sebedits/refs/heads/main/Screenshot_20251114-151126_Canva.jpg" />
-      <img src="https://raw.githubusercontent.com/seb-creator01/Sebedits/refs/heads/main/Screenshot_20251114-150736_Canva.jpg" />
+
+    <div id="graphic" class="images-section">
+const buttons = document.querySelectorAll('.toggle-btn');
+    const sections = document.querySelectorAll('.images-section');
+
+    buttons.forEach(button => {
+      button.addEventListener('click', () => {
+        buttons.forEach(btn => btn.classList.remove('active'));
+        button.classList.add('active');
+
+        const target = button.getAttribute('data-target');
+
+        sections.forEach(section => {
+          section.classList.remove('active');
+          if (section.id === target) {
+            section.classList.add('active
+<img src="https://raw.githubusercontent.com/seb-creator01/Sebedits/main/Polish_20250801_141804654.png" />
+      <img src="https://raw.githubusercontent.com/seb-creator01/Sebedits/main/Screenshot_20251114-151329_Canva.jpg" />
+      <img src="https://raw.githubusercontent.com/seb-creator01/Sebedits/main/Screenshot_20251114-151126_Canva.jpg" />
+      <img src="https://raw.githubusercontent.com/seb-creator01/Sebedits/main/Screenshot_20251114-150736_Canva.jpg" />
     </div>
 
     <div id="logo" class="images-section">
-      <img src="https://raw.githubusercontent.com/seb-creator01/Sebedits/refs/heads/main/Polish_20251114_144243975.jpg" />
-      <img src="https://raw.githubusercontent.com/seb-creator01/Sebedits/refs/heads/main/Polish_20251114_144328737.jpg" />
-      <img src="https://raw.githubusercontent.com/seb-creator01/Sebedits/refs/heads/main/Polish_20251114_144411281.jpg" />
-      <img src="https://raw.githubusercontent.com/seb-creator01/Sebedits/refs/heads/main/Polish_20251114_144510666.jpg" />
+      <img src="https://raw.githubusercontent.com/seb-creator01/Sebedits/main/Polish_20251114_144243975.jpg" />
+      <img src="https://raw.githubusercontent.com/seb-creator01/Sebedits/main/Polish_20251114_144328737.jpg" />
+      <img src="https://raw.githubusercontent.com/seb-creator01/Sebedits/main/Polish_20251114_144411281.jpg" />
+      <img src="https://raw.githubusercontent.com/seb-creator01/Sebedits/main/Polish_20251114_144510666.jpg" />
     </div>
 
-    <p class="contact-text">Have a project or idea in mind? Let’s chat!</p>
-<a href="https://wa.me/message/O2QERB7C5VE6E1" target="_blank" class="contact-btn">Chat on WhatsApp</a>
+    <p style="margin-top: 2rem; font-weight: 600;">Have a project or idea in mind? Let’s chat!</p>
+
+    <a href="https://wa.me/message/O2QERB7C5VE6E1" target="_blank" class="contact-btn">Chat on WhatsApp</a>
   </div>
 
   <footer>© 2025 Sebedits. All rights reserved.</footer>
 
   <script>
-    const buttons = document.querySelectorAll('.toggle-btn');
-    const sections = document.querySelectorAll('.images-section');
-
-    buttons.forEach(btn => {
-      btn.addEventListener('click', () => {
-        sections.forEach(sec => sec.classList.remove('active'));
-        const target = btn.getAttribute('data-target');
-        document.getElementById(target).classList.add('active');
-      });
-    });
-  </script>
-</body>
-</html>
